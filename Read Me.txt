@@ -1,0 +1,40 @@
+Proxy Instruction
+
+1. To start the proxy service, you should run following instruction in your terminal:
+
+   python ProxyServer 127.0.0.1
+
+
+2. The port number used in the proxy is 8888. So, you can open your browser and type the website you want to visit:
+   
+   127.0.0.1:8888/www.google.com
+
+
+3. The data structure is as follows:
+
+   (1) When there is a "/" in the filename, you will build a directory, and save the file in the directory.
+   	   For example, if the filename is a/b/c.txt, you will first build directory a, then build sub-directory b, and store the c.txt in the b directory;
+
+   (2) When there is not "/" in the filename, the file will be stored directly in the same folder as the ProxyServer.py 
+
+
+4. Error handling: when meeting unavailable request file, the proxy will respond with "404 Not Found" file. There is a file called index.html, which is a simple "Not Found" website. This HTML file will send to the client when "404 Not Found" happens.
+
+
+5. Cache Update: when the file in the cache is modified, the files will be updated to the newest version.  
+
+
+Bonus:
+
+6. Save headers:the headers received from client will be stored, and use them to maek request to server when necessary.
+
+
+7. Multi-thread: the proxy supports multi-thread functionality, which can handle multiple requests at the same time. The target function is handler(), each time call handler(), the new thead will start
+
+
+8. Each functionality is made into function, which can be readable and elegant.
+
+
+
+
+
